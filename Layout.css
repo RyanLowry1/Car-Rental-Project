@@ -1,0 +1,462 @@
+/*
+Name:       Group
+CourseCode: KC_SOF_B
+Subject:    SEM 4 Project
+Purpose:    Stylesheet for website
+Date:       11/2/26
+*/
+*
+    {
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+body 
+    {
+        font-family: Arial, sans-serif;
+        background-color: rgb(0, 0, 0);
+    }
+p
+    {
+        color: white;
+        text-align: center;
+    }
+label 
+    {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: white;
+    }
+.container 
+    {
+        max-width: 600px;
+        margin: 0 auto;
+        background: black;
+        padding: 2rem;
+        border: solid 3px white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-decoration: none;
+    }
+h2, h3, h4
+    {
+        text-align: center;
+        color: white;
+        margin-bottom: 20px;
+    }
+.form-group 
+    {
+        margin-bottom: 15px;
+    }
+/* Table Styling */
+table 
+{
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: black;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+th
+{
+    background-color: forestgreen;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+td
+{
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+tr:hover 
+{
+    background-color: black;
+}
+/* Container to organize buttons above the table */
+.report-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    width: 90%; /* Matches your table width */
+}
+/* Base style for report buttons */
+/* Container to organize buttons above the table */
+.report-controls 
+{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    width: 90%;
+}
+/* Use specific selectors to override the general 'input' styles */
+div.report-controls input.report-btn 
+{
+    all: unset; /* Clear previous input styling */
+    flex: 1;
+    max-width: 200px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+    /* Default state: Red like your reset button */
+    background-color: red; 
+    border: none;
+}
+/* Hover effect for the Red buttons */
+div.report-controls input.report-btn:hover:not(:disabled) 
+{
+    opacity: 0.9;
+    animation: Clear_Pulse 1.5s infinite linear; /* Uses your existing Red pulse */
+}
+/* Selected state: Green like your submit button */
+div.report-controls input.report-btn:disabled 
+{
+    background-color: forestgreen;
+    opacity: 1;
+    cursor: default;
+}
+/* Style both inputs and select listboxes consistently */
+input, 
+select 
+    {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        color: white;
+        background-color: black; /* Added to ensure listboxes are dark */
+        border: 1.5px solid white;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+select
+    {
+        appearance: none; /* Removes default OS styling */
+        background-image: url('Down_Arrow.png');
+        background-repeat: no-repeat;
+        background-position: right 15px top 5px;
+        background-size: 25px 25px;
+    }
+/* Required fields start with a red left border */
+input:required,
+select:required 
+    {
+        border-left: 5px solid red;
+    }
+input:readonly
+    {
+        border: 1px solid gray;
+        border-left: 5px solid gray;
+        color: gray;
+    }
+/* Valid state: Changes the red border-left to green when criteria are met */
+input:valid,
+select:valid 
+    {
+        border-color: green;
+        border-left: 5px solid green; /* Overwrites the red required marker */
+    }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+    {
+    -webkit-appearance: none; /*This gets rid of the default spinner */
+    margin: 0; 
+    }
+/* Container to hold the input and the buttons */
+.input-spinner-container 
+    {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+/* Ensure the input leaves room for the buttons on the right */
+.input-spinner-container input 
+    {
+        padding-right: 40px !important; /* Prevents text from overlapping arrows */
+    }
+/* Positioning the controls inside the right edge of the input */
+.spinner-controls 
+    {
+        position: absolute;
+        right: 6px;
+        display: flex;
+        flex-direction: column;
+        height: 75%; /* Fits inside the vertical padding of the input */
+        width: 30px;
+    }
+.spinner-controls button 
+    {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+.spinner-controls button img 
+    {
+        width: 15px; /* Slightly smaller to fit stacked */
+        height: auto;
+    }
+.spinner-controls button:hover 
+    {
+        opacity: 0.7;
+    }
+.button-group 
+    {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+button[type="submit"] 
+    {
+        background-color: forestgreen;
+        color: white;
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+    }
+button[type="button"] 
+    {
+        background-color: forestgreen;
+        color: white;
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+a
+    {
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+button[type="reset"] 
+    {
+        background-color: red;
+        color: white;
+        flex: 1;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+    }
+button[type="submit"]:hover 
+    {
+        opacity: 0.9;
+        animation-name: Submit_Pulse;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+button[type="button"]:hover 
+    {
+        opacity: 0.9;
+        animation-name: Amend_Pulse;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+button[type="reset"]:hover 
+    {
+        opacity: 0.9;
+        animation-name: Clear_Pulse;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+.hint 
+    {
+        font-size: 0.8rem;
+        color: grey;
+        margin-top: 2px;
+    }
+.dropbtn1 /*Dropdown button visible in header */
+    {
+        background-color: #000000;
+        color: white;
+        padding: 10px;
+        font-size: 10px;
+        border: solid rgb(255, 255, 255) 2px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+.dropdown1 /*Dropdown from button in header */
+    {
+        position: relative;
+        display: inline-block; 
+    }
+.dropdown-content1 /*Where the content goes from header dropdown */
+    {
+        display: none;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        z-index: 1; 
+        flex-direction: column; 
+        min-width: 100px;
+        min-height: 200px;
+    }
+/* The class used to toggle visibility */
+.show1 
+    {
+        display: flex !important;
+    }
+.dropbtn /*The buttons inside the header dropdown menu */
+    {
+        background-color: #2d6c2b;
+        width: 175px;
+        height: 50px;
+        margin: 2px;
+        border-radius: 10px;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        animation-name: Header_Dropdown_Animation;
+        animation-duration: 0.5s;
+    }
+.dropdown /*Drop down from inner dropdown buttons */
+    {
+        position: relative;
+        /* Keeps the container tight around the button */
+        display: inline-block; 
+    }
+.dropdown-content /*Drop down that appear to the right of the buttons in the header dropdown */
+    {
+        display: none;
+        position: absolute;
+        /* This moves it to the right of the button */
+        left: 100%; 
+        /* This aligns the top of the menu with the top of the button */
+        top: 0;     
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+        margin-left: 1px;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px #00ff15;
+        z-index: 0;
+        animation-name: Inner_Dropdown_Animation;
+        animation-duration: 0.2s;
+    }
+.dropdown-content a /*Buttons in inner dropdown */
+    {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block; /* Keeps links stacked vertically */
+    }
+.dropdown-content a:hover /*Hover effect on inner dropdown menu */
+    {
+        background-color: #f1f1f1;
+        border-radius: 10px;
+        margin: 2px;
+    }
+.dropdown:hover .dropdown-content 
+    {
+        display: block;
+    }
+.dropdown:hover .dropbtn /*Hover effect on buttons from header dropdown*/
+    {
+        background-color: #06380e;
+    }
+header
+    {
+        display: flex;
+        background-color: #0a0a0a;
+        height: 75px;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        margin-bottom: 25px;
+    }
+header .dropdown1 /*Positioning for dropdown menu in header*/
+    {
+        flex: 1;
+        justify-self: flex-start;
+        display: flex;
+    }
+header h2 /*Positioning for Logo in header */
+    {
+        flex: 2;
+        text-align: center;
+        margin: 0;
+        max-width: 100px;
+        max-height: 100px;
+        
+    }
+header h2:hover /*Hover animation for logo*/
+    {
+        animation-name: Logo_Pulse;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+header p /*Positioning for placeholder */
+    {
+        flex: 1;
+        margin: 0;
+    }
+@keyframes Header_Dropdown_Animation
+    {
+        from{transform: translateX(-200px)}
+    }
+@keyframes Inner_Dropdown_Animation
+    {
+        from{transform: translateX(3000px)}
+    }
+@keyframes Logo_Pulse 
+    {
+    50%
+        {
+            transform: scale(1.2);
+            filter: drop-shadow(0px 0px 30px #2bff00);
+        }
+    }
+@keyframes Submit_Pulse 
+    {
+    50%
+        {
+            transform: scale(1.05);
+            filter: drop-shadow(0px 0px 30px #2bff00);
+        }
+    }
+@keyframes Clear_Pulse 
+    {
+    50%
+        {
+            transform: scale(1.05);
+            filter: drop-shadow(0px 0px 30px #ff0000);
+        }
+    }
+@keyframes Amend_Pulse 
+    {
+    50%
+        {
+            transform: scale(1.05);
+        }
+    }
